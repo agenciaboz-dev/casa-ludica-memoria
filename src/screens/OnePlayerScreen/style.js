@@ -12,12 +12,7 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         flexDirection: 'row',
         width: '100%',
-        marginTop: 25,
-    },
-    top_buttons_style: {
-        backgroundColor: COLORS.background,
-        color: COLORS.primary,
-        width: 100,
+        marginBottom: 25,
     },
     body_container: {
         justifyContent: 'space-around',
@@ -31,9 +26,15 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: COLORS.secondary,
-        width: 40,
-        height: 60,
-        margin: 20,
+        width: 70,
+        height: 110,
+        margin: 5,
         borderRadius: 5,
-    }
+    },
+    bottom_buttons_style: {
+        backgroundColor: COLORS.background,
+        color: COLORS.primary,
+        width: 100,
+        borderRadius:5,
+    },
 });

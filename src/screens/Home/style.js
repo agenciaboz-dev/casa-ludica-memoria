@@ -5,13 +5,8 @@ export const styles = StyleSheet.create({
     main_container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         backgroundColor: COLORS.background,
-    },
-    // container: {
-        
-    // }
-    // button: {
-    //     backgroundColor: COLORS.primary,
-    // }
+
+    }
 })

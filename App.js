@@ -43,7 +43,7 @@ export default function App() {
     };
     const home_header_options = {
         title: 'Inicio',
-        // headerShown: false,
+        headerShown: false,
     };
 
     return (
@@ -56,10 +56,10 @@ export default function App() {
                         component={Home}
                         options={home_header_options}  
                         />
+                    <Stack.Screen name="OnePlayerScreen" component={OnePlayerScreen} options={{headerShown: false}} />
                     <Stack.Screen name="Details" component={DetailsScreen} options={
                         {title: "Detalhes"}
                     } />
-                    <Stack.Screen name="OnePlayerScreen" component={OnePlayerScreen} options={{headerShown: false}} />
                     <Stack.Screen name="Options" component={Options} options={{title: 'Opções'}} />
                 </Stack.Navigator>
             </OptionsProvider>
