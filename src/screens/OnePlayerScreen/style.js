@@ -5,10 +5,15 @@ export const styles = StyleSheet.create({
     main_container: {
         justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: COLORS.primary,
-        flex: 1,
+        flex: 0.85,
+        backgroundColor: COLORS.background,
     },
-    top_container: {
+    cloud_background: {
+        position: 'absolute',
+        top: -20,
+        
+    },
+    bottom_container: {
         justifyContent: 'space-evenly',
         flexDirection: 'row',
         width: '100%',
@@ -25,19 +30,17 @@ export const styles = StyleSheet.create({
     cartinha: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: COLORS.secondary,
         width: 70,
         height: 110,
         margin: 5,
         borderRadius: 5,
+        borderColor: COLORS.border, borderWidth: 3,
     },
     cartinha_number: {
         fontSize: 32,
     },
     bottom_buttons_style: {
-        backgroundColor: COLORS.background,
-        color: COLORS.primary,
-        width: 100,
-        borderRadius:5,
+        height: 51.5,
+        width: '70%',
     },
 });

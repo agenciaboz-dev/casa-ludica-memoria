@@ -1,9 +1,21 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Alert, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Image, ImageBackground, Text, TouchableOpacity, View } from 'react-native';
 import { COLORS } from '../../colors';
 import { Button } from '../../components/Button';
 import { useOptions } from '../../hooks/useOptions';
 import { styles } from './style';
+
+const card_background = require('../../../assets/cards/background.png');
+const cards = {
+    1: require('../../../assets/cards/card_1.png'),
+    2: require(`../../../assets/cards/card_2.png`),
+    3: require(`../../../assets/cards/card_3.png`),
+    4: require(`../../../assets/cards/card_4.png`),
+    5: require(`../../../assets/cards/card_5.png`),
+    6: require(`../../../assets/cards/card_6.png`),
+    7: require(`../../../assets/cards/card_7.png`),
+    8: require(`../../../assets/cards/card_8.png`),
+}
 
 export const OnePlayerScreen = ({navigation}) => {
 
@@ -18,7 +30,7 @@ export const OnePlayerScreen = ({navigation}) => {
     const [reset, setReset] = useState(false);
 
     const acertou_style = {
-        backgroundColor: COLORS.correct,
+        opacity: 0,
     };
 
     const errou_style = {
@@ -79,12 +91,6 @@ export const OnePlayerScreen = ({navigation}) => {
                 first.done = true;
                 second.done = true;
                 
-                setTimeout(() => {
-                    first.style = {...acertou_style, opacity: 0.3};
-                    second.style = {...acertou_style, opacity: 0.3};
-                    console.log(first.style);
-                }, 1000);
-
                 checkVictory();
 
             } else {
@@ -128,26 +134,29 @@ export const OnePlayerScreen = ({navigation}) => {
     }
 
     return (
-        <View style={styles.main_container}>
-            <View style={styles.body_container}>
-                {
-                    items.map((item) => {
-                        return (
-                            <View key={`${item.position}`} pointerEvents={item.done ? 'none' : 'auto'}>
-                                <TouchableOpacity onPress={() => teste(item)} style={[styles.cartinha, item.style]} >
-                                    {/* <Text>{item.number}</Text> */}
-                                    <Text style={styles.cartinha_number}>{item.clicked ? item.number : null}</Text>
-                                </TouchableOpacity>
-                            </View>
-                        )
-                    })
-                }
+        <ImageBackground style={{flex: 1, justifyContent: 'flex-end'}} source={require('../../../assets/background.jpeg')}>
+            <Image style={styles.cloud_background} source={require('../../../assets/cloud.png')} resizeMode='contain' />
+            <View style={styles.main_container}> 
+                <View style={styles.body_container}>
+                    {
+                        items.map((item) => {
+                            return (
+                                <View key={`${item.position}`} pointerEvents={item.done ? 'none' : 'auto'}>
+                                    <TouchableOpacity onPress={() => teste(item)} style={[styles.cartinha, item.style]} >
+                                        {/* <Text>{item.number}</Text> */}
+                                        <Image style={styles.cartinha} source={item.clicked ? cards[item.number] : card_background} />
+                                    </TouchableOpacity>
+                                </View>
+                            )
+                        })
+                    }
+                </View>
+                <View style={styles.bottom_container}>
+                    <Button style={styles.bottom_buttons_style} onPress={() => navigation.goBack()}>Voltar</Button>
+                    {/* <Button style={styles.top_buttons_style}>Sei lá</Button>
+                    <Button style={styles.top_buttons_style}>Algo</Button> */}
+                </View>
             </View>
-            <View style={styles.top_container}>
-                <Button style={styles.bottom_buttons_style} onPress={() => navigation.goBack()}>Voltar</Button>
-                {/* <Button style={styles.top_buttons_style}>Sei lá</Button>
-                <Button style={styles.top_buttons_style}>Algo</Button> */}
-            </View>
-        </View>
+        </ImageBackground>
     )
 }
