@@ -107,6 +107,11 @@ export const OnePlayerScreen = ({navigation}) => {
         }
     }, [second]);
 
+    const restartGame = () => {
+        navigation.navigate('Home');
+        navigation.push('OnePlayerScreen');
+    }
+
     const checkVictory = async () => {
         const lista = items;
         for (let item of lista) {
@@ -118,12 +123,12 @@ export const OnePlayerScreen = ({navigation}) => {
             "Parabéns!",
             "",
             [
-            //   {
-            //     text: "Cancel",
-            //     onPress: () => console.log("Cancel Pressed"),
-            //     style: "cancel"
-            //   },
-              { text: "OK", onPress: () => navigation.navigate('Home') }
+              {
+                text: "Início",
+                onPress: () => navigation.navigate('Home'),
+                style: "cancel"
+              },
+              { text: "Jogar novamente", onPress: () => restartGame() }
             ]
           );
         
