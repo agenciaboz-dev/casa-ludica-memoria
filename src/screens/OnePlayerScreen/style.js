@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native';
 import { COLORS } from '../../colors';
+import { Dimensions } from 'react-native'
+
+const vw = Dimensions.get('window').width / 100;
 
 export const styles = StyleSheet.create({
     main_container: {
@@ -10,13 +13,14 @@ export const styles = StyleSheet.create({
     },
     cloud_background: {
         position: 'absolute',
-        top: -20,
+        top: -5.5*vw,
+        width: 100*vw,
         
     },
     bottom_container: {
         justifyContent: 'space-evenly',
         flexDirection: 'row',
-        width: '100%',
+        width: 100*vw,
         marginBottom: 25,
     },
     body_container: {
@@ -24,14 +28,14 @@ export const styles = StyleSheet.create({
         alignContent: 'space-around',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        padding: 20,
+        padding: 5.5*vw,
         flex: 1,
     },  
     cartinha: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: 70,
-        height: 110,
+        width: 19.4*vw,
+        height: 30.5*vw,
         margin: 5,
         borderRadius: 5,
         borderColor: COLORS.border, borderWidth: 3,
@@ -40,7 +44,7 @@ export const styles = StyleSheet.create({
         fontSize: 32,
     },
     bottom_buttons_style: {
-        height: 51.5,
-        width: '70%',
+        height: 14.2*vw,
+        width: 70*vw,
     },
 });

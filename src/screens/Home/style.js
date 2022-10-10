@@ -1,5 +1,8 @@
 import { StyleSheet } from "react-native";
 import { COLORS } from '../../colors';
+import { Dimensions } from 'react-native'
+
+const vw = Dimensions.get('window').width / 100;
 
 export const styles = StyleSheet.create({
     main_container: {
@@ -12,8 +15,8 @@ export const styles = StyleSheet.create({
     container: {
         justifyContent: 'flex-end',
         alignItems: 'center',
-        height: 283,
-        width: '100%',
+        height: 78.5*vw,
+        width: 100*vw,
         marginTop: 'auto',
         // borderColor: 'red', borderWidth: 1,
     },
@@ -21,15 +24,15 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 70,
-        width: 300,
-        height: 61,
+        width: 83*vw,
+        height: 17*vw,
     },
     logo: {
         marginTop: 50,
-        height: 150,
+        height: 41.5*vw,
     },
     title: {
         marginTop: 'auto',
-        height: 120,
+        height: 33*vw,
     }
 })

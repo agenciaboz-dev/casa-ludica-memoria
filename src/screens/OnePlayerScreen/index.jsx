@@ -96,13 +96,9 @@ export const OnePlayerScreen = ({navigation}) => {
             } else {
                 console.log('errou');
                 
-                first.style = errou_style;
-                second.style = errou_style;
                 setTimeout(() => {
                     first.clicked = false;
                     second.clicked = false;
-                    first.style = {};
-                    second.style = {};
                 })
             }
             console.log(first);
