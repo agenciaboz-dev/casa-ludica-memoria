@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
         position: 'absolute',
         top: -5.5*vw,
         width: 100*vw,
+        height: 78.5*vw,
         
     },
     bottom_container: {
