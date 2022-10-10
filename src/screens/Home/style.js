@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 70,
         width: 83*vw,
-        height: 17*vw,
+        height: 17.1*vw,
     },
     logo: {
         marginTop: 50,
