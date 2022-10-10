@@ -9,23 +9,7 @@ import { OptionsProvider } from './src/contexts/OptionsContext'
 import { Options } from './src/screens/Options';
 
 
-  function DetailsScreen({route, navigation}) {
-    // const {nome} = route.params;
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-        <Text>oi</Text>
-        <Button
-            title='Mudar de nome'
-            onPress={() => {
-                navigation.setParams({
-                    nome: 'Arthur'
-                })
-            }}
-        />
-      </View>
-    );
-  }
+
 
 export default function App() {
 
@@ -39,7 +23,7 @@ export default function App() {
             fontWeight: 'bold',
           },
           headerTitleAlign: 'center',
-          animation: 'slide_from_right',
+          animation: 'slide_from_bottom',
     };
     const home_header_options = {
         title: 'Inicio',
@@ -57,9 +41,6 @@ export default function App() {
                         options={home_header_options}  
                         />
                     <Stack.Screen name="OnePlayerScreen" component={OnePlayerScreen} options={{headerShown: false}} />
-                    <Stack.Screen name="Details" component={DetailsScreen} options={
-                        {title: "Detalhes"}
-                    } />
                     <Stack.Screen name="Options" component={Options} options={{title: 'Opções'}} />
                 </Stack.Navigator>
             </OptionsProvider>

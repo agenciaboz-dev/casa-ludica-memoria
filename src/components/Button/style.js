@@ -4,10 +4,18 @@ import { COLORS } from '../../colors';
 export const styles = StyleSheet.create({
     button: {
         textAlign: 'center',
+        justifyContent: 'center',
         // backgroundColor: COLORS.primary,
         color: COLORS.primary,
-        paddingHorizontal: 10,
-        paddingVertical: 5,
-        width: 150,
+        // paddingHorizontal: 10,
+        // paddingVertical: 5,
+        // fontFamily: 'KG-Second-Chances-Solid',
+        
     },
+    background: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: '100%',
+    }
 });
