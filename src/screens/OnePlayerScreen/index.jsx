@@ -136,7 +136,7 @@ export const OnePlayerScreen = ({navigation}) => {
                             <View key={`${item.position}`} pointerEvents={item.done ? 'none' : 'auto'}>
                                 <TouchableOpacity onPress={() => teste(item)} style={[styles.cartinha, item.style]} >
                                     {/* <Text>{item.number}</Text> */}
-                                    <Text>{item.clicked ? item.number : null}</Text>
+                                    <Text style={styles.cartinha_number}>{item.clicked ? item.number : null}</Text>
                                 </TouchableOpacity>
                             </View>
                         )

@@ -31,6 +31,9 @@ export const styles = StyleSheet.create({
         margin: 5,
         borderRadius: 5,
     },
+    cartinha_number: {
+        fontSize: 32,
+    },
     bottom_buttons_style: {
         backgroundColor: COLORS.background,
         color: COLORS.primary,
