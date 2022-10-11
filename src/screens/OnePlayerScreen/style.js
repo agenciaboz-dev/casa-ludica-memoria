@@ -32,14 +32,19 @@ export const styles = StyleSheet.create({
         padding: 5.5*vw,
         flex: 1,
     },  
-    cartinha: {
+    card_container: {
         justifyContent: 'center',
         alignItems: 'center',
-        width: 19.4*vw,
-        height: 30.5*vw,
         margin: 5,
         borderRadius: 5,
-        borderColor: COLORS.border, borderWidth: 3,
+        width: 19.4*vw,
+        height: 30.5*vw,
+        // borderColor: COLORS.border, borderWidth: 3,
+    },
+    cartinha: {
+        width: 19.4*vw,
+        height: 30.5*vw,
+        borderRadius: 5,
     },
     cartinha_number: {
         fontSize: 32,

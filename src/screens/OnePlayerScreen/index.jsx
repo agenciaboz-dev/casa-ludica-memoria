@@ -4,6 +4,7 @@ import { COLORS } from '../../colors';
 import { Button } from '../../components/Button';
 import { useOptions } from '../../hooks/useOptions';
 import { styles } from './style';
+import CardFlip from 'react-native-card-flip';
 
 const card_background = require('../../../assets/cards/background.png');
 const cards = {
@@ -73,6 +74,7 @@ export const OnePlayerScreen = ({navigation}) => {
 
 
     const clickCard = (item) => {
+        item.card.flip();
         item.clicked = true;
         if (first.number) {
             if (item.position == first.position) {
@@ -89,16 +91,26 @@ export const OnePlayerScreen = ({navigation}) => {
         if (second.number) {
             if (second.number == first.number) {
                 console.log('acertou');
-                first.style = acertou_style;
-                second.style = acertou_style;
+                // setTimeout(() => {
+                    first.style = acertou_style;
+                    second.style = acertou_style;
+                // })
+                setTimeout(() => {
+                    second.card.flip();
+                    first.card.flip();
+                }, 1000)
                 first.done = true;
                 second.done = true;
-                
                 checkVictory();
 
             } else {
                 console.log('errou');
                 
+                setTimeout(() => {
+                    second.card.flip();
+                    first.card.flip();
+                }, 1000)
+
                 setTimeout(() => {
                     first.clicked = false;
                     second.clicked = false;
@@ -143,14 +155,23 @@ export const OnePlayerScreen = ({navigation}) => {
             <View style={styles.main_container}> 
                 <View style={styles.body_container}>
                     {
-                        items.map((item) => {
+                        items.map((item, index) => {
                             return (
-                                <View key={`${item.position}`} pointerEvents={item.done ? 'none' : 'auto'}>
-                                    <TouchableOpacity onPress={() => clickCard(item)} style={[styles.cartinha, item.style]} >
-                                        {/* <Text>{item.number}</Text> */}
-                                        <Image style={styles.cartinha} source={item.clicked ? cards[item.number] : card_background} />
+                                // <View key={`${item.position}`} pointerEvents={item.done ? 'none' : 'auto'}>
+                                //     <TouchableOpacity onPress={() => clickCard(item)} style={[styles.cartinha, item.style]} >
+                                //         {/* <Text>{item.number}</Text> */}
+                                //         <Image style={styles.cartinha} source={item.clicked ? cards[item.number] : card_background} />
+                                //     </TouchableOpacity>
+                                // </View>
+
+                                <CardFlip key={`${item.position}`} style={[styles.card_container, item.style]} ref={(card) => {item.card = card; return card}} >
+                                    <TouchableOpacity style={styles.cartinha} onPress={() => clickCard(item)} > 
+                                        <Image style={styles.cartinha} source={card_background} />
                                     </TouchableOpacity>
-                                </View>
+                                    <TouchableOpacity style={styles.cartinha} onPress={() => item.card.jiggle({ count: 2, duration: 100, progress: 0.05 })} > 
+                                        <Image style={styles.cartinha} source={cards[item.number]} />
+                                    </TouchableOpacity>
+                                </CardFlip>
                             )
                         })
                     }
