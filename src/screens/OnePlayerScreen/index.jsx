@@ -78,9 +78,8 @@ export const OnePlayerScreen = ({navigation}) => {
             if (item.position == first.position) {
                 return false
             }
-            
+
             setSecond(item);
-            // item.style = acertou_style;
         } else {
             setFirst(item);
         }

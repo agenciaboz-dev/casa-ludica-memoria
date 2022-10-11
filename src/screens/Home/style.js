@@ -12,10 +12,10 @@ export const styles = StyleSheet.create({
         backgroundColor: COLORS.background,
 
     },
-    container: {
+    bottom_container: {
         justifyContent: 'flex-end',
         alignItems: 'center',
-        height: 78.5*vw,
+        height: 78.6*vw,
         width: 100*vw,
         marginTop: 'auto',
         // borderColor: 'red', borderWidth: 1,
