@@ -72,9 +72,13 @@ export const OnePlayerScreen = ({navigation}) => {
     }, [options.values.quantidade]);
 
 
-    const teste = (item) => {
+    const clickCard = (item) => {
         item.clicked = true;
         if (first.number) {
+            if (item.position == first.position) {
+                return false
+            }
+            
             setSecond(item);
             // item.style = acertou_style;
         } else {
@@ -143,7 +147,7 @@ export const OnePlayerScreen = ({navigation}) => {
                         items.map((item) => {
                             return (
                                 <View key={`${item.position}`} pointerEvents={item.done ? 'none' : 'auto'}>
-                                    <TouchableOpacity onPress={() => teste(item)} style={[styles.cartinha, item.style]} >
+                                    <TouchableOpacity onPress={() => clickCard(item)} style={[styles.cartinha, item.style]} >
                                         {/* <Text>{item.number}</Text> */}
                                         <Image style={styles.cartinha} source={item.clicked ? cards[item.number] : card_background} />
                                     </TouchableOpacity>
