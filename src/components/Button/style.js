@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
         color: COLORS.primary,
         // paddingHorizontal: 10,
         // paddingVertical: 5,
-        // fontFamily: 'KG-Second-Chances-Solid',
+        fontFamily: 'KGSecondChancesSolid',
         
     },
     background: {

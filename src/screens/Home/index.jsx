@@ -1,17 +1,9 @@
-import { useState } from 'react';
 import { Image, ImageBackground, Text, View } from 'react-native';
-import { AppLoading } from '../../components/AppLoading';
 import { Button } from '../../components/Button';
 import { styles } from './style';
 
-export const Home = ({navigation}) => {
+export const Home = ({navigation, custom_fonts}) => {
 
-    const [loading, setLoading] = useState(true)
-
-    if (loading) {
-        return <AppLoading />
-    }
-    
     return (
         <ImageBackground style={styles.main_container} source={require('../../../assets/background.jpeg')}>
                 <Image style={styles.logo} source={require('../../../assets/logo.png')} resizeMode='contain' />

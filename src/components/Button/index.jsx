@@ -10,7 +10,7 @@ import * as Font from 'expo-font';
 //     });
 // };
 
-export const Button = ({children, onPress, style, fontSize}) => {
+export const Button = ({children, onPress, style, fontSize, custom_font}) => {
 
     // const [loaded, setLoaded] = useState(false)
     
