@@ -157,8 +157,6 @@ export const OnePlayerScreen = ({navigation}) => {
                 </View>
                 <View style={styles.bottom_container}>
                     <Button style={styles.bottom_buttons_style} onPress={() => navigation.goBack()} fontSize={40}>VOLTAR</Button>
-                    {/* <Button style={styles.top_buttons_style}>Sei lá</Button>
-                    <Button style={styles.top_buttons_style}>Algo</Button> */}
                 </View>
             </View>
         </ImageBackground>
