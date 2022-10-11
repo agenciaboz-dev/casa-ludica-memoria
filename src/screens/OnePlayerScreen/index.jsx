@@ -29,6 +29,7 @@ export const OnePlayerScreen = ({navigation}) => {
     });
 
     const [reset, setReset] = useState(false);
+    const [render, setRender] = useState(false)
 
     const acertou_style = {
         opacity: 0,
@@ -73,8 +74,10 @@ export const OnePlayerScreen = ({navigation}) => {
     }, [options.values.quantidade]);
 
 
-    const clickCard = (item) => {
-        item.card.flip();
+    const clickCard = async (item, index) => {
+        if (!index) {
+            return false
+        }
         item.clicked = true;
         if (first.number) {
             if (item.position == first.position) {
@@ -94,11 +97,8 @@ export const OnePlayerScreen = ({navigation}) => {
                 // setTimeout(() => {
                     first.style = acertou_style;
                     second.style = acertou_style;
-                // })
-                setTimeout(() => {
-                    second.card.flip();
-                    first.card.flip();
-                }, 1000)
+                    // setRender(!render)
+                // }, 250)
                 first.done = true;
                 second.done = true;
                 checkVictory();
@@ -106,10 +106,10 @@ export const OnePlayerScreen = ({navigation}) => {
             } else {
                 console.log('errou');
                 
-                setTimeout(() => {
+                // setTimeout(() => {
                     second.card.flip();
                     first.card.flip();
-                }, 1000)
+                // }, 250)
 
                 setTimeout(() => {
                     first.clicked = false;
@@ -164,8 +164,8 @@ export const OnePlayerScreen = ({navigation}) => {
                                 //     </TouchableOpacity>
                                 // </View>
 
-                                <CardFlip key={`${item.position}`} style={[styles.card_container, item.style]} ref={(card) => {item.card = card; return card}} >
-                                    <TouchableOpacity style={styles.cartinha} onPress={() => clickCard(item)} > 
+                                <CardFlip onFlipEnd={(index) => clickCard(item, index)} key={`${item.position}`} style={[styles.card_container, item.style]} ref={(card) => {item.card = card; return card}} >
+                                    <TouchableOpacity style={styles.cartinha} onPress={() => item.card.flip()} > 
                                         <Image style={styles.cartinha} source={card_background} />
                                     </TouchableOpacity>
                                     <TouchableOpacity style={styles.cartinha} onPress={() => item.card.jiggle({ count: 2, duration: 100, progress: 0.05 })} > 
