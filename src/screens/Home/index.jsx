@@ -1,8 +1,16 @@
+import { useState } from 'react';
 import { Image, ImageBackground, Text, View } from 'react-native';
+import { AppLoading } from '../../components/AppLoading';
 import { Button } from '../../components/Button';
 import { styles } from './style';
 
 export const Home = ({navigation}) => {
+
+    const [loading, setLoading] = useState(true)
+
+    if (loading) {
+        return <AppLoading />
+    }
     
     return (
         <ImageBackground style={styles.main_container} source={require('../../../assets/background.jpeg')}>
