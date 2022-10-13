@@ -18,7 +18,7 @@ const cards = {
     8: require(`../../../assets/cards/card_8.png`),
 }
 
-export const OnePlayerScreen = ({navigation}) => {
+export const GameMult = ({navigation}) => {
 
     const options = useOptions();
     const [first, setFirst] = useState({
@@ -127,7 +127,7 @@ export const OnePlayerScreen = ({navigation}) => {
 
     const restartGame = () => {
         navigation.navigate('Home');
-        navigation.push('OnePlayerScreen');
+        navigation.push('Game');
     }
     
     const goScore = useCallback(() => {
