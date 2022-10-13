@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Alert, Image, ImageBackground, Text, TouchableOpacity, View } from 'react-native';
 import { COLORS } from '../../colors';
 import { Button } from '../../components/Button';
@@ -38,6 +38,8 @@ export const OnePlayerScreen = ({navigation}) => {
     const errou_style = {
         backgroundColor: COLORS.wrong,
     }
+
+    const [erros, setErros] = useState(0)
     
     
     const items = useMemo(() => {
@@ -105,6 +107,7 @@ export const OnePlayerScreen = ({navigation}) => {
 
             } else {
                 console.log('errou');
+                setErros(erros+1);
                 
                 setTimeout(() => {
                     second.card.flip();
@@ -126,6 +129,13 @@ export const OnePlayerScreen = ({navigation}) => {
         navigation.navigate('Home');
         navigation.push('OnePlayerScreen');
     }
+    
+    const goScore = useCallback(() => {
+        navigation.navigate('Home');
+        navigation.navigate('Score', {
+            erros: erros,
+        });
+    }, [erros])
 
     const checkVictory = async () => {
         const lista = items;
@@ -134,24 +144,15 @@ export const OnePlayerScreen = ({navigation}) => {
                 return false
             }
         }
-        Alert.alert(
-            "Parabéns!",
-            "",
-            [
-              {
-                text: "Início",
-                onPress: () => navigation.navigate('Home'),
-                style: "cancel"
-              },
-              { text: "Jogar novamente", onPress: () => restartGame() }
-            ]
-          );
+
+        goScore();
         
     }
 
     return (
         <ImageBackground style={{flex: 1, justifyContent: 'flex-end'}} source={require('../../../assets/background.jpeg')}>
             <Image style={styles.cloud_background} source={require('../../../assets/cloud.png')} resizeMode='contain' />
+            <Text>{erros}</Text>
             <View style={styles.main_container}> 
                 <View style={styles.body_container}>
                     {

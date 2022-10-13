@@ -8,6 +8,7 @@ import { OptionsProvider } from './src/contexts/OptionsContext'
 import { Options } from './src/screens/Options';
 import { AppLoading } from './src/components/AppLoading';
 import { useFonts } from 'expo-font';
+import { Score } from './src/screens/Score';
 
 export default function App() {
     
@@ -48,6 +49,7 @@ export default function App() {
                         component={Home}
                     />
                     <Stack.Screen name="OnePlayerScreen" component={OnePlayerScreen} options={{headerShown: false}} />
+                    <Stack.Screen name="Score" component={Score} options={{headerShown: false}} />
                     <Stack.Screen name="Options" component={Options} options={{title: 'Opções'}} />
                 </Stack.Navigator>
             </OptionsProvider>
