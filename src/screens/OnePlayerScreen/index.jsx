@@ -94,11 +94,11 @@ export const OnePlayerScreen = ({navigation}) => {
         if (second.number) {
             if (second.number == first.number) {
                 console.log('acertou');
-                // setTimeout(() => {
+                setTimeout(() => {
                     first.style = acertou_style;
                     second.style = acertou_style;
-                    // setRender(!render)
-                // }, 250)
+                    setRender(!render)
+                }, 1000)
                 first.done = true;
                 second.done = true;
                 checkVictory();
@@ -106,10 +106,10 @@ export const OnePlayerScreen = ({navigation}) => {
             } else {
                 console.log('errou');
                 
-                // setTimeout(() => {
+                setTimeout(() => {
                     second.card.flip();
                     first.card.flip();
-                // }, 250)
+                }, 1000)
 
                 setTimeout(() => {
                     first.clicked = false;
@@ -164,7 +164,7 @@ export const OnePlayerScreen = ({navigation}) => {
                                 //     </TouchableOpacity>
                                 // </View>
 
-                                <CardFlip onFlipEnd={(index) => clickCard(item, index)} key={`${item.position}`} style={[styles.card_container, item.style]} ref={(card) => {item.card = card; return card}} >
+                                <CardFlip onFlip={(index) => clickCard(item, index)} key={`${item.position}`} style={[styles.card_container, item.style]} ref={(card) => {item.card = card; return card}} >
                                     <TouchableOpacity style={styles.cartinha} onPress={() => item.card.flip()} > 
                                         <Image style={styles.cartinha} source={card_background} />
                                     </TouchableOpacity>
