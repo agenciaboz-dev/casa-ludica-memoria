@@ -11,8 +11,8 @@ export const Rooms = ({ navigation, route }) => {
 
     const newRoom = () => {
         api.get('/new_room').then((response) => {
-            const room = response.data;
-            setRooms([...rooms, room])
+            const data = response.data;
+            navigation.navigate('GameMult', {room: data.room, players: [data.player]});
         });
     }
 
@@ -22,6 +22,12 @@ export const Rooms = ({ navigation, route }) => {
             setRooms(rooms)
         });
     }
+
+    const onRoomClick = (room) => {
+        api.post('/room', room).then((response) => {
+            console.log(response);
+        })
+    }
     
     return (
         <View style={styles.container}>
@@ -30,7 +36,7 @@ export const Rooms = ({ navigation, route }) => {
             <View style={styles.rooms}>
                 {
                     rooms.map((item) => {return(
-                        <Text key={rooms.indexOf(item)}>{item.id}</Text>
+                        <Button onPress={() => onRoomClick(item)} style={styles.button} key={rooms.indexOf(item)}>{item.id}</Button>
                     )})
                 }
             </View>

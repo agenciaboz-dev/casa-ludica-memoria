@@ -18,7 +18,9 @@ const cards = {
     8: require(`../../../assets/cards/card_8.png`),
 }
 
-export const GameMult = ({navigation}) => {
+export const GameMult = ({navigation, route}) => {
+    const [players, setPlayers] = useState(route.params.players);
+    const room = route.params.room;
 
     const options = useOptions();
     const [first, setFirst] = useState({
@@ -153,6 +155,8 @@ export const GameMult = ({navigation}) => {
         <ImageBackground style={{flex: 1, justifyContent: 'flex-end'}} source={require('../../../assets/background.jpeg')}>
             <Image style={styles.cloud_background} source={require('../../../assets/cloud.png')} resizeMode='contain' />
             <Text>{erros}</Text>
+            <Text>{players[0].id}</Text>
+            <Text>{players[1]?.id}</Text>
             <View style={styles.main_container}> 
                 <View style={styles.body_container}>
                     {

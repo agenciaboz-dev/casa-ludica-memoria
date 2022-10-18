@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
         
     },
     button: {
-        height: 10.3*vw,
+        height: 10.2*vw,
         width: 50 * vw,
         margin: 2*vw,
     }
