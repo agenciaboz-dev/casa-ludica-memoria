@@ -6,6 +6,7 @@ const vw = Dimensions.get('window').width / 100;
 
 export const styles = StyleSheet.create({
     main_container: {
+        position: 'relative',
         justifyContent: 'flex-start',
         alignItems: 'center',
         flex: 0.85,
