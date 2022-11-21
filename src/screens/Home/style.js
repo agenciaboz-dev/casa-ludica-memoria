@@ -26,6 +26,10 @@ export const styles = StyleSheet.create({
         width: 83*vw,
         height: 17.1*vw,
     },
+    small_button: {
+        width: 41*vw,
+        height: 8.5*vw,
+    },
     logo: {
         marginTop: 50,
         height: 41.5*vw,
@@ -33,5 +37,8 @@ export const styles = StyleSheet.create({
     title: {
         marginTop: 'auto',
         height: 33*vw,
+    },
+    bottom_buttons: {
+        flexDirection: 'row',
     }
 })

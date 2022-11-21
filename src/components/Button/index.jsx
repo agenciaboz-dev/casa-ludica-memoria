@@ -25,7 +25,7 @@ export const Button = ({children, onPress, style, fontSize, custom_font}) => {
 
     return (
         <TouchableOpacity onPress={onPress} style={style}>
-            <ImageBackground source={require('../../../assets/button.png')} resizeMode="cover" style={[styles.background]}>
+            <ImageBackground source={require('../../../assets/button.png')} resizeMode="stretch" style={[styles.background]}>
                 <Text style={[styles.button, {fontSize: fontSize}]}>{children}</Text>
             </ImageBackground>
         </TouchableOpacity>

@@ -25,6 +25,10 @@ export const Home = ({navigation, custom_fonts}) => {
                     {/* <Button style={styles.button} onPress={() => getRooms()} fontSize={50} >DE DOIS</Button> */}
                     {/* <Button style={{margin: 30}} onPress={() => navigation.navigate('Details')} >Dois jogadores</Button>
                     <Button style={{margin: 30}} onPress={() => navigation.navigate('Options')} >Opções</Button> */}
+                    <View style={styles.bottom_buttons}>
+                        <Button style={[styles.button, styles.small_button]} onPress={() => navigation.navigate('Options')} >PLACAR</Button>
+                        <Button style={[styles.button, styles.small_button]} onPress={() => navigation.navigate('Options')} >OPÇÕES</Button>
+                    </View>
                 </ImageBackground>
         </ImageBackground>
     )
