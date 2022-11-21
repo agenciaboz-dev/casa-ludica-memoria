@@ -22,7 +22,7 @@ export const Home = ({navigation, custom_fonts}) => {
                 <Image style={styles.title} source={require('../../../assets/jogo_da_memoria.png')} resizeMode='contain' />
                 <ImageBackground style={styles.bottom_container} source={require('../../../assets/cloud.png')} resizeMode='cover' >
                     <Button style={styles.button} onPress={() => navigation.navigate('Game')} fontSize={50} >JOGAR</Button>
-                    <Button style={styles.button} onPress={() => getRooms()} fontSize={50} >DE DOIS</Button>
+                    {/* <Button style={styles.button} onPress={() => getRooms()} fontSize={50} >DE DOIS</Button> */}
                     {/* <Button style={{margin: 30}} onPress={() => navigation.navigate('Details')} >Dois jogadores</Button>
                     <Button style={{margin: 30}} onPress={() => navigation.navigate('Options')} >Opções</Button> */}
                 </ImageBackground>

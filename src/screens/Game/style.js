@@ -39,13 +39,14 @@ export const styles = StyleSheet.create({
         margin: 5,
         borderRadius: 5,
         width: 19.4*vw,
-        height: 30.5*vw,
+        height: 32.5*vw,
         // borderColor: COLORS.border, borderWidth: 3,
     },
     cartinha: {
         width: 19.4*vw,
-        height: 30.5*vw,
+        height: 32.5*vw,
         borderRadius: 5,
+        resizeMode: 'stretch',
     },
     cartinha_number: {
         fontSize: 32,

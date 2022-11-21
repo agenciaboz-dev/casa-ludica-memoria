@@ -27,10 +27,10 @@ export default function App() {
           headerTitleAlign: 'center',
           animation: 'slide_from_bottom',
         };
-        const home_header_options = {
-            title: 'Inicio',
-            headerShown: false,
-        };
+    const home_header_options = {
+        title: 'Inicio',
+        headerShown: false,
+    };
         
     let [loaded] = useFonts({
         'KGSecondChancesSolid': require('./assets/fonts/KGSecondChancesSolid.ttf'),
