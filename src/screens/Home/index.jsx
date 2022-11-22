@@ -22,9 +22,6 @@ export const Home = ({navigation, custom_fonts}) => {
                 <Image style={styles.title} source={require('../../../assets/jogo_da_memoria.png')} resizeMode='contain' />
                 <ImageBackground style={styles.bottom_container} source={require('../../../assets/cloud.png')} resizeMode='cover' >
                     <Button style={styles.button} onPress={() => navigation.navigate('Game')} fontSize={50} >JOGAR</Button>
-                    {/* <Button style={styles.button} onPress={() => getRooms()} fontSize={50} >DE DOIS</Button> */}
-                    {/* <Button style={{margin: 30}} onPress={() => navigation.navigate('Details')} >Dois jogadores</Button>
-                    <Button style={{margin: 30}} onPress={() => navigation.navigate('Options')} >Opções</Button> */}
                     <View style={styles.bottom_buttons}>
                         <Button style={[styles.button, styles.small_button]} onPress={() => navigation.navigate('Options')} >PLACAR</Button>
                         <Button style={[styles.button, styles.small_button]} onPress={() => navigation.navigate('Options')} >OPÇÕES</Button>

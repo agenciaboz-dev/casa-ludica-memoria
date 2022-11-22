@@ -22,13 +22,17 @@ export const styles = StyleSheet.create({
     button: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 70,
+        // marginBottom: 70,
         width: 83*vw,
         height: 17.1*vw,
     },
     small_button: {
         width: 41*vw,
-        height: 8.5*vw,
+        height: 12*vw,
+        marginTop: 5*vw,
+        marginBottom: 10*vw,
+        marginLeft: 1*vw,
+        marginRight: 1*vw,
     },
     logo: {
         marginTop: 50,
