@@ -8,14 +8,14 @@ export const Options = ({navigation}) => {
     
     return (
         <View style={styles.main_container}>
-            {Object.entries(options.values).map((item) => {
+            {/* {Object.entries(options.values).map((item) => {
                 return (
                     <View key={`${item}-container`}>
                         <Text>{item[0]}</Text>
                         <TextInput>{item[1]}</TextInput>
                     </View>
                 )
-            })}
+            })} */}
         </View>
     )
 }
