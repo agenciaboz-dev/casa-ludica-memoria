@@ -5,14 +5,15 @@ const OptionsContext = createContext({});
 export default OptionsContext;
 
 
-export const OptionsProvider = ({children}) => {
+export const OptionsProvider = ({ children }) => {
 
     const [values, setValues] = useState({
         quantidade: 16,
+        animations: true,
     })
 
     return (
-        <OptionsContext.Provider value={{values, setValues}}>
+        <OptionsContext.Provider value={{ values, setValues }}>
             {children}
         </OptionsContext.Provider>
     )

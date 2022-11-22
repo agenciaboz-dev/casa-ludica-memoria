@@ -15,24 +15,24 @@ import { ThemeProvider } from './src/contexts/ThemeContext';
 import { GameMode } from './src/screens/GameMode';
 
 export default function App() {
-    
+
     const Stack = createNativeStackNavigator();
     const navigator_options = {
         headerStyle: {
             backgroundColor: COLORS.primary,
-          },
-          headerTintColor: COLORS.background,
-          headerTitleStyle: {
+        },
+        headerTintColor: COLORS.background,
+        headerTitleStyle: {
             fontWeight: 'bold',
         },
-          headerTitleAlign: 'center',
-          animation: 'slide_from_bottom',
-        };
+        headerTitleAlign: 'center',
+        animation: 'slide_from_bottom',
+    };
     const home_header_options = {
         title: 'Inicio',
         headerShown: false,
     };
-        
+
     let [loaded] = useFonts({
         'KGSecondChancesSolid': require('./assets/fonts/KGSecondChancesSolid.ttf'),
         'KGSecondChancesSketch': require('./assets/fonts/KGSecondChancesSketch.ttf'),

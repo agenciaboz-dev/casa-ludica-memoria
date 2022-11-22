@@ -4,16 +4,16 @@ import { Button } from '../../components/Button';
 import { useRooms } from '../../hooks/useRooms';
 import { styles } from './style';
 
-export const Home = ({navigation, custom_fonts}) => {
+export const Home = ({ navigation, custom_fonts }) => {
 
     const getRooms = () => {
         api.get('/rooms').then((response) => {
             const data = response.data;
             navigation.navigate('Rooms', data);
         })
-        .catch((error) => {
-            console.error(error);
-        })
+            .catch((error) => {
+                console.error(error);
+            })
     }
 
     return (
