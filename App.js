@@ -10,8 +10,9 @@ import { Options } from './src/screens/Options';
 import { AppLoading } from './src/components/AppLoading';
 import { useFonts } from 'expo-font';
 import { Score } from './src/screens/Score';
-import { GameMult } from './src/screens/GameMult';
 import { Rooms } from './src/screens/Rooms';
+import { ThemeProvider } from './src/contexts/ThemeContext';
+import { GameMode } from './src/screens/GameMode';
 
 export default function App() {
     
@@ -44,21 +45,23 @@ export default function App() {
     return (
         <NavigationContainer>
             <OptionsProvider>
-                <RoomsProvider>
-                    <StatusBar style="auto" />
-                    <Stack.Navigator initialRouteName='Home' screenOptions={navigator_options}>
-                        <Stack.Screen 
-                            name="Home" 
-                            options={home_header_options}  
-                            component={Home}
-                        />
-                        <Stack.Screen name="Game" component={Game} options={{headerShown: false}} />
-                        <Stack.Screen name="GameMult" component={GameMult} options={{headerShown: false}} />
-                        <Stack.Screen name="Rooms" component={Rooms} options={{headerShown: false}} />
-                        <Stack.Screen name="Score" component={Score} options={{headerShown: false}} />
-                        <Stack.Screen name="Options" component={Options} options={{title: 'Opções'}} />
-                    </Stack.Navigator>
-                </RoomsProvider>
+                <ThemeProvider>
+                    <RoomsProvider>
+                        <StatusBar style="auto" />
+                        <Stack.Navigator initialRouteName='Home' screenOptions={navigator_options}>
+                            <Stack.Screen
+                                name="Home"
+                                options={home_header_options}
+                                component={Home}
+                            />
+                            <Stack.Screen name="Game" component={Game} options={{headerShown: false}} />
+                            <Stack.Screen name="Rooms" component={Rooms} options={{headerShown: false}} />
+                            <Stack.Screen name="GameMode" component={GameMode} options={{headerShown: false}} />
+                            <Stack.Screen name="Score" component={Score} options={{headerShown: false}} />
+                            <Stack.Screen name="Options" component={Options} options={{title: 'Opções'}} />
+                        </Stack.Navigator>
+                    </RoomsProvider>
+                </ThemeProvider>
             </OptionsProvider>
         </NavigationContainer>
     );

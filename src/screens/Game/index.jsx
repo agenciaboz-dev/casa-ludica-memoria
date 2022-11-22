@@ -6,20 +6,29 @@ import { useOptions } from '../../hooks/useOptions';
 import { styles } from './style';
 import CardFlip from 'react-native-card-flip';
 import { Modal } from '../../components/Modal';
-
-const card_background = require('../../../assets/cards/background.png');
-const cards = {
-    1: require('../../../assets/cards/card_1.png'),
-    2: require(`../../../assets/cards/card_2.png`),
-    3: require(`../../../assets/cards/card_3.png`),
-    4: require(`../../../assets/cards/card_4.png`),
-    5: require(`../../../assets/cards/card_5.png`),
-    6: require(`../../../assets/cards/card_6.png`),
-    7: require(`../../../assets/cards/card_7.png`),
-    8: require(`../../../assets/cards/card_8.png`),
-}
+import { useTheme } from '../../hooks/useTheme';
 
 export const Game = ({navigation}) => {
+
+    const theme = useTheme().values
+    let cards
+    let card_background
+    
+    if (theme.name == 'default') {
+
+        card_background = require(`../../../assets/themes/default/cards/background.png`);
+        cards = {
+            1: require(`../../../assets/themes/default/cards/card_1.png`),
+            2: require(`../../../assets/themes/default/cards/card_2.png`),
+            3: require(`../../../assets/themes/default/cards/card_3.png`),
+            4: require(`../../../assets/themes/default/cards/card_4.png`),
+            5: require(`../../../assets/themes/default/cards/card_5.png`),
+            6: require(`../../../assets/themes/default/cards/card_6.png`),
+            7: require(`../../../assets/themes/default/cards/card_7.png`),
+            8: require(`../../../assets/themes/default/cards/card_8.png`),
+        }
+    }
+
 
     const options = useOptions();
     const [first, setFirst] = useState({
