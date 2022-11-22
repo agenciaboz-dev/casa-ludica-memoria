@@ -5,6 +5,7 @@ import { Button } from '../../components/Button';
 import { useOptions } from '../../hooks/useOptions';
 import { styles } from './style';
 import CardFlip from 'react-native-card-flip';
+import { Modal } from '../../components/Modal';
 
 const card_background = require('../../../assets/cards/background.png');
 const cards = {
@@ -40,6 +41,7 @@ export const Game = ({navigation}) => {
     }
 
     const [erros, setErros] = useState(0)
+    const [visible, setVisible] = useState(false)
     
     
     const items = useMemo(() => {
@@ -125,16 +127,9 @@ export const Game = ({navigation}) => {
         }
     }, [second]);
 
-    const restartGame = () => {
-        navigation.navigate('Home');
-        navigation.push('Game');
-    }
-    
     const goScore = useCallback(() => {
-        navigation.navigate('Home');
-        navigation.navigate('Score', {
-            erros: erros,
-        });
+        setVisible(true)
+
     }, [erros])
 
     const checkVictory = async () => {
@@ -152,7 +147,7 @@ export const Game = ({navigation}) => {
     return (
         <ImageBackground style={{flex: 1, justifyContent: 'flex-end'}} source={require('../../../assets/background.jpeg')}>
             <Image style={styles.cloud_background} source={require('../../../assets/cloud.png')} resizeMode='contain' />
-            <Text>{erros}</Text>
+            {/* <Text>{erros}</Text> */}
             <View style={styles.main_container}> 
                 <View style={styles.body_container}>
                     {
@@ -181,6 +176,7 @@ export const Game = ({navigation}) => {
                     <Button style={styles.bottom_buttons_style} onPress={() => navigation.goBack()} fontSize={40}>VOLTAR</Button>
                 </View>
             </View>
+            <Modal visible={visible} setVisible={setVisible} erros={erros} navigation={navigation} />
         </ImageBackground>
     )
 }
