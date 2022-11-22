@@ -14,24 +14,24 @@ import { GameMult } from './src/screens/GameMult';
 import { Rooms } from './src/screens/Rooms';
 
 export default function App() {
-    
+
     const Stack = createNativeStackNavigator();
     const navigator_options = {
         headerStyle: {
             backgroundColor: COLORS.primary,
-          },
-          headerTintColor: COLORS.background,
-          headerTitleStyle: {
+        },
+        headerTintColor: COLORS.background,
+        headerTitleStyle: {
             fontWeight: 'bold',
         },
-          headerTitleAlign: 'center',
-          animation: 'slide_from_bottom',
-        };
-        const home_header_options = {
-            title: 'Inicio',
-            headerShown: false,
-        };
-        
+        headerTitleAlign: 'center',
+        animation: 'slide_from_bottom',
+    };
+    const home_header_options = {
+        title: 'Inicio',
+        headerShown: false,
+    };
+
     let [loaded] = useFonts({
         'KGSecondChancesSolid': require('./assets/fonts/KGSecondChancesSolid.ttf'),
         'KGSecondChancesSketch': require('./assets/fonts/KGSecondChancesSketch.ttf'),
@@ -47,16 +47,16 @@ export default function App() {
                 <RoomsProvider>
                     <StatusBar style="auto" />
                     <Stack.Navigator initialRouteName='Home' screenOptions={navigator_options}>
-                        <Stack.Screen 
-                            name="Home" 
-                            options={home_header_options}  
+                        <Stack.Screen
+                            name="Home"
+                            options={home_header_options}
                             component={Home}
                         />
-                        <Stack.Screen name="Game" component={Game} options={{headerShown: false}} />
-                        <Stack.Screen name="GameMult" component={GameMult} options={{headerShown: false}} />
-                        <Stack.Screen name="Rooms" component={Rooms} options={{headerShown: false}} />
-                        <Stack.Screen name="Score" component={Score} options={{headerShown: false}} />
-                        <Stack.Screen name="Options" component={Options} options={{title: 'Opções'}} />
+                        <Stack.Screen name="Game" component={Game} options={{ headerShown: false }} />
+                        <Stack.Screen name="GameMult" component={GameMult} options={{ headerShown: false }} />
+                        <Stack.Screen name="Rooms" component={Rooms} options={{ headerShown: false }} />
+                        <Stack.Screen name="Score" component={Score} options={{ headerShown: false }} />
+                        <Stack.Screen name="Options" component={Options} options={{ headerShown: false }} />
                     </Stack.Navigator>
                 </RoomsProvider>
             </OptionsProvider>
