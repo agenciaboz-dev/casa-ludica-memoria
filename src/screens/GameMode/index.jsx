@@ -24,8 +24,8 @@ export const GameMode = ({navigation}) => {
     }
     
     return (
-        <ImageBackground style={{ flex: 1 }} source={require('../../../assets/background.jpeg')}>
-            <Image style={styles.cloud_background} source={require('../../../assets/cloud_background.png')} resizeMode='stretch' />
+        <ImageBackground style={{ flex: 1 }} source={Images.background}>
+            <Image style={styles.cloud_background} source={Images.cloud_background} resizeMode='stretch' />
             <View style={styles.main_container}>
                 <Text style={styles.text}>ESCOLHA O MODO DE JOGO</Text>
                 {modes.map(item => {

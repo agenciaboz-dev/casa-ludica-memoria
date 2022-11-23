@@ -145,8 +145,8 @@ export const Game = ({navigation}) => {
     }
 
     return (
-        <ImageBackground style={{flex: 1, justifyContent: 'flex-end'}} source={require('../../../assets/background.jpeg')}>
-            <Image style={styles.cloud_background} source={require('../../../assets/cloud.png')} resizeMode='contain' />
+        <ImageBackground style={{flex: 1, justifyContent: 'flex-end'}} source={Images.background}>
+            <Image style={styles.cloud_background} source={Images.themes[theme.name].cloud_background} resizeMode='stretch' />
             {/* <Text>{erros}</Text> */}
             <View style={styles.main_container}> 
                 <View style={styles.body_container}>

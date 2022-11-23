@@ -3,6 +3,7 @@ import { COLORS } from '../../colors';
 import { Dimensions } from 'react-native'
 
 const vw = Dimensions.get('window').width / 100;
+const vh = Dimensions.get('window').height / 100;
 
 export const styles = StyleSheet.create({
     main_container: {
@@ -10,13 +11,13 @@ export const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'center',
         flex: 0.85,
-        backgroundColor: COLORS.background,
+        // backgroundColor: COLORS.background,
     },
     cloud_background: {
         position: 'absolute',
-        top: -5.5*vw,
+        top: 5*vh,
         width: 100*vw,
-        height: 78.5*vw,
+        height: 100*vh,
         
     },
     bottom_container: {

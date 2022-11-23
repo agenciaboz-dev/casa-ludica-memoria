@@ -1,7 +1,10 @@
 const images = {
+    background: require('../assets/background.jpeg'),
+    cloud_background: require('../assets/cloud_background.png'),
     themes: {
         default: {
             game_mode: require('../assets/themes/default/game_mode.png'),
+            cloud_background: require('../assets/themes/default/cloud_background.png'),
             card_background: require('../assets/themes/default/cards/background.png'),
             cards: [
                 require(`../assets/themes/default/cards/card_1.png`),
@@ -16,6 +19,7 @@ const images = {
         },
         xmas: {
             game_mode: require('../assets/themes/xmas/game_mode.png'),
+            cloud_background: require('../assets/themes/xmas/cloud_background.png'),
             card_background: require('../assets/themes/xmas/cards/background.png'),
             cards: [
                 require(`../assets/themes/xmas/cards/card_1.png`),
