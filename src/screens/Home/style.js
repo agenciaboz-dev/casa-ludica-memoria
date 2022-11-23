@@ -27,6 +27,7 @@ export const styles = StyleSheet.create({
         height: 17.1*vw,
     },
     small_button: {
+        opacity: 0,
         width: 41*vw,
         height: 12*vw,
         marginTop: 5*vw,

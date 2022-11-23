@@ -10,7 +10,7 @@ import * as Font from 'expo-font';
 //     });
 // };
 
-export const Button = ({children, onPress, style, fontSize, custom_font}) => {
+export const Button = ({children, onPress, style, fontSize, custom_font, disabled}) => {
 
     // const [loaded, setLoaded] = useState(false)
     
@@ -24,7 +24,7 @@ export const Button = ({children, onPress, style, fontSize, custom_font}) => {
     // }
 
     return (
-        <TouchableOpacity onPress={onPress} style={style}>
+        <TouchableOpacity onPress={onPress} style={style} disabled={disabled}>
             <ImageBackground source={require('../../../assets/button.png')} resizeMode="stretch" style={[styles.background]}>
                 <Text style={[styles.button, {fontSize: fontSize}]}>{children}</Text>
             </ImageBackground>

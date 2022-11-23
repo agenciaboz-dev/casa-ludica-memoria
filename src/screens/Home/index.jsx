@@ -23,8 +23,8 @@ export const Home = ({ navigation, custom_fonts }) => {
                 <ImageBackground style={styles.bottom_container} source={require('../../../assets/cloud.png')} resizeMode='cover' >
                     <Button style={styles.button} onPress={() => navigation.navigate('GameMode')} fontSize={50} >JOGAR</Button>
                     <View style={styles.bottom_buttons}>
-                        <Button style={[styles.button, styles.small_button]} fontSize={22} onPress={() => navigation.navigate('Options')} >PLACAR</Button>
-                        <Button style={[styles.button, styles.small_button]} fontSize={22} onPress={() => navigation.navigate('Options')} >OPÇÕES</Button>
+                        <Button disabled={true} style={[styles.button, styles.small_button]} fontSize={22} onPress={() => navigation.navigate('Options')} >PLACAR</Button>
+                        <Button disabled={true} style={[styles.button, styles.small_button]} fontSize={22} onPress={() => navigation.navigate('Options')} >OPÇÕES</Button>
                     </View>
                 </ImageBackground>
         </ImageBackground>
