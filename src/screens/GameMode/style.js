@@ -23,5 +23,10 @@ export const styles = StyleSheet.create({
         color: COLORS.primary,
         fontFamily: 'KGSecondChancesSolid',
         fontSize: 22,
+    },
+    gamemode_card: {
+        width: 90*vw,
+        height: 30*vw,
+        marginTop: 5*vw,
     }
 });

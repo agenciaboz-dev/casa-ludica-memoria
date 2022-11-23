@@ -7,30 +7,21 @@ import { styles } from './style';
 import CardFlip from 'react-native-card-flip';
 import { Modal } from '../../components/Modal';
 import { useTheme } from '../../hooks/useTheme';
+import Images from '../../images'
 
 export const Game = ({navigation}) => {
 
     const theme = useTheme().values
-    let cards
-    let card_background
-    
-    if (theme.name == 'default') {
-
-        card_background = require(`../../../assets/themes/default/cards/background.png`);
-        cards = {
-            1: require(`../../../assets/themes/default/cards/card_1.png`),
-            2: require(`../../../assets/themes/default/cards/card_2.png`),
-            3: require(`../../../assets/themes/default/cards/card_3.png`),
-            4: require(`../../../assets/themes/default/cards/card_4.png`),
-            5: require(`../../../assets/themes/default/cards/card_5.png`),
-            6: require(`../../../assets/themes/default/cards/card_6.png`),
-            7: require(`../../../assets/themes/default/cards/card_7.png`),
-            8: require(`../../../assets/themes/default/cards/card_8.png`),
-        }
-    }
-
-
     const options = useOptions();
+
+    // Getting card images from current theme
+    const card_background = Images.themes[theme.name].card_background
+    let cards = {}
+    Images.themes[theme.name].cards.map(item => {
+        const key = Images.themes[theme.name].cards.indexOf(item)
+        cards = {...cards, [key+1]: item}
+    })
+
     const [first, setFirst] = useState({
         number: 0,
     });
